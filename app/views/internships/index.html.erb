@@ -1,0 +1,22 @@
+<div class="page-header">
+  <%= link_to "Add a New Position", "/jobs/new", :class => "btn btn-md btn-success pull-right" %>
+  <h1>Internship Catalog</h1>
+</div>
+
+<% @internship_list.each do |internship| %>
+  <div class="row">
+    <div class="col-md-3">
+<!--       <a href="/Jobs/<%= internship.id %>/show"><img width="150" src="<%= job.logo_url %>"></a> -->
+    </div>
+    <div class="col-md-8">
+      <h3><%= internship.firm_id %></a></h3>
+<!--       <p class="lead"><%= number_to_currency(job.price) %></p> -->
+      <p><%= internship.description %></p>
+
+      <p class="pull-right">
+      <%= link_to "Edit", "/jobs/#{job.id}/edit" %> |
+      <%= link_to "Delete", "/jobs/#{job.id}/delete" %>
+</p>
+    </div>
+  </div>
+<% end %>
